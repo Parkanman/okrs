@@ -1,0 +1,80 @@
+{
+  "mission": "",
+  "deadline": "2026-09-07",
+  "goals": [
+    {
+      "name": "Бег",
+      "description": "Пробежать 50 км",
+      "target": 50,
+      "current": 0,
+      "unit": "км",
+      "category": "Здоровье"
+    },
+    {
+      "name": "Кроссфит",
+      "description": "10 тренировок",
+      "target": 10,
+      "current": 0,
+      "unit": "тренировок",
+      "category": "Здоровье"
+    },
+    {
+      "name": "Уролог",
+      "description": "10 процедур у врача",
+      "target": 10,
+      "current": 0,
+      "unit": "процедур",
+      "category": "Здоровье"
+    },
+    {
+      "name": "Анализ крови",
+      "description": "Сдать химический анализ крови",
+      "target": 1,
+      "current": 0,
+      "unit": "раз",
+      "category": "Здоровье"
+    },
+    {
+      "name": "Снижение веса",
+      "description": "Похудеть с 103 до 95 кг",
+      "target": 95,
+      "current": 103,
+      "start": 103,
+      "unit": "кг",
+      "direction": "down",
+      "category": "Здоровье"
+    },
+    {
+      "name": "Вокал",
+      "description": "5 уроков вокала",
+      "target": 5,
+      "current": 0,
+      "unit": "уроков",
+      "category": "Развитие"
+    },
+    {
+      "name": "Музей",
+      "description": "Посетить 3 музея",
+      "target": 3,
+      "current": 0,
+      "unit": "посещения",
+      "category": "Развитие"
+    },
+    {
+      "name": "Книги",
+      "description": "Прочитать 10 книг",
+      "target": 10,
+      "current": 0,
+      "unit": "книг",
+      "category": "Развитие"
+    },
+    {
+      "name": "Самодисциплина",
+      "description": "Пройти курс по самодисциплине (12 глав)",
+      "target": 12,
+      "current": 0,
+      "unit": "глав",
+      "category": "Развитие"
+    }
+  ]
+}
