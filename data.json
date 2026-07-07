@@ -38,7 +38,7 @@
       "name": "Снижение веса",
       "description": "Похудеть с 103 до 95 кг",
       "target": 95,
-      "current": 103,
+      "current": 102,
       "start": 103,
       "unit": "кг",
       "direction": "down",
