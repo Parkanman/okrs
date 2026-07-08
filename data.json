@@ -100,7 +100,7 @@
       "name": "Книги",
       "description": "Прочитать 10 книг",
       "target": 10,
-      "current": 0,
+      "current": 1,
       "unit": "книг",
       "category": "Развитие"
     },
