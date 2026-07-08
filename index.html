@@ -286,6 +286,57 @@
     }
 
     /* ── MISSION TAB ── */
+    .mission-header {
+      text-align: center;
+      margin-bottom: 28px;
+    }
+
+    .mission-header-icon { font-size: 3rem; margin-bottom: 12px; }
+
+    .mission-header-title {
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: var(--text);
+      margin-bottom: 6px;
+    }
+
+    .mission-header-sub {
+      font-size: 0.88rem;
+      color: var(--muted);
+    }
+
+    .toast-card {
+      background: var(--card);
+      border-radius: var(--radius);
+      padding: 28px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.07);
+      margin-bottom: 20px;
+    }
+
+    .toast-author {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 18px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .toast-emoji { font-size: 1.6rem; }
+
+    .toast-from {
+      font-weight: 700;
+      font-size: 1rem;
+      color: var(--primary);
+    }
+
+    .toast-text {
+      font-size: 0.95rem;
+      line-height: 1.8;
+      color: var(--text);
+      white-space: pre-line;
+    }
+
     .mission-card {
       background: var(--card);
       border-radius: var(--radius);
@@ -382,11 +433,12 @@
 
   <!-- MISSION TAB -->
   <div class="tab-panel" id="tab-mission">
-    <div class="mission-card">
-      <div class="mission-icon">🌟</div>
-      <div class="mission-title">Моя глобальная цель</div>
-      <div class="mission-text" id="missionText"></div>
+    <div class="mission-header">
+      <div class="mission-header-icon">🌟</div>
+      <div class="mission-header-title">Моя глобальная цель</div>
+      <div class="mission-header-sub">Что скажут обо мне люди на моём 70-летнем юбилее</div>
     </div>
+    <div id="toastsContainer"></div>
   </div>
 
 </div>
@@ -559,16 +611,24 @@
     document.getElementById('quoteText').textContent = `"${q.text}"`;
     document.getElementById('quoteAuthor').textContent = `— ${q.author}`;
 
-    // Mission
-    const mEl = document.getElementById('missionText');
-    if (data.mission && data.mission.trim()) {
-      mEl.textContent = data.mission;
+    // Mission toasts
+    const toastsEl = document.getElementById('toastsContainer');
+    const toasts = data.mission && data.mission.toasts;
+    if (toasts && toasts.length > 0) {
+      toastsEl.innerHTML = toasts.map(t => `
+        <div class="toast-card">
+          <div class="toast-author">
+            <span class="toast-emoji">${t.emoji}</span>
+            <span class="toast-from">${t.from}</span>
+          </div>
+          <div class="toast-text">${t.text}</div>
+        </div>`).join('');
     } else {
-      mEl.innerHTML = `
-        <span class="mission-empty">Глобальная цель ещё не сформулирована.</span>
-        <div class="mission-hint">
-          Чтобы добавить миссию — открой <strong>data.json</strong> в GitHub<br>
-          и заполни поле <code>"mission": "..."</code>
+      toastsEl.innerHTML = `
+        <div class="mission-card">
+          <div class="mission-icon">🌟</div>
+          <div class="mission-title">Пока пусто</div>
+          <div class="mission-text mission-empty">Тосты появятся здесь по мере добавления в data.json</div>
         </div>`;
     }
   }
