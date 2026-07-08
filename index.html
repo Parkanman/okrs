@@ -330,6 +330,15 @@
       color: var(--primary);
     }
 
+    .toast-version {
+      margin-left: auto;
+      font-size: 0.72rem;
+      color: var(--muted);
+      background: #F1F5F9;
+      padding: 2px 10px;
+      border-radius: 100px;
+    }
+
     .toast-text {
       font-size: 0.95rem;
       line-height: 1.8;
@@ -614,15 +623,25 @@
     // Mission toasts
     const toastsEl = document.getElementById('toastsContainer');
     const toasts = data.mission && data.mission.toasts;
+    const dayIndex = Math.floor(Date.now() / 86400000);
     if (toasts && toasts.length > 0) {
-      toastsEl.innerHTML = toasts.map(t => `
+      toastsEl.innerHTML = toasts.map(t => {
+        const text = t.versions
+          ? t.versions[dayIndex % t.versions.length]
+          : t.text;
+        const versionLabel = t.versions
+          ? `<span class="toast-version">День ${dayIndex % t.versions.length + 1} из ${t.versions.length}</span>`
+          : '';
+        return `
         <div class="toast-card">
           <div class="toast-author">
             <span class="toast-emoji">${t.emoji}</span>
             <span class="toast-from">${t.from}</span>
+            ${versionLabel}
           </div>
-          <div class="toast-text">${t.text}</div>
-        </div>`).join('');
+          <div class="toast-text">${text}</div>
+        </div>`;
+      }).join('');
     } else {
       toastsEl.innerHTML = `
         <div class="mission-card">
