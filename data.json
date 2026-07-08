@@ -6,7 +6,7 @@
       "name": "Бег",
       "description": "Пробежать 50 км",
       "target": 50,
-      "current": 2,
+      "current": 6,
       "unit": "км",
       "category": "Здоровье"
     },
@@ -14,7 +14,7 @@
       "name": "Кроссфит",
       "description": "10 тренировок",
       "target": 10,
-      "current": 0,
+      "current": 1,
       "unit": "тренировок",
       "category": "Здоровье"
     },
