@@ -58,7 +58,7 @@
       "name": "Процедура у врача",
       "description": "10 процедур у врача",
       "target": 10,
-      "current": 0,
+      "current": 1,
       "unit": "процедур",
       "category": "Здоровье"
     },
