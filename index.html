@@ -387,6 +387,85 @@
       display: inline-block;
     }
 
+    /* ── PRINCIPLES ── */
+    .principles-section {
+      background: var(--card);
+      border-radius: var(--radius);
+      padding: 24px 28px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.07);
+      margin-bottom: 20px;
+    }
+
+    .principles-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .principle-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #EEF2FF;
+      color: var(--primary-dark);
+      font-weight: 600;
+      font-size: 0.85rem;
+      padding: 7px 14px;
+      border-radius: 100px;
+    }
+
+    /* ── ROLES ── */
+    .roles-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 14px;
+      margin-bottom: 20px;
+    }
+
+    .role-card {
+      background: var(--card);
+      border-radius: var(--radius);
+      padding: 20px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.07);
+    }
+
+    .role-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+
+    .role-emoji { font-size: 1.4rem; }
+
+    .role-name {
+      font-weight: 700;
+      font-size: 0.98rem;
+      color: var(--text);
+    }
+
+    .role-principles {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 12px;
+    }
+
+    .role-principle-tag {
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--muted);
+      background: #F1F5F9;
+      padding: 2px 10px;
+      border-radius: 100px;
+    }
+
+    .role-statement {
+      font-size: 0.85rem;
+      line-height: 1.6;
+      color: var(--text);
+    }
+
     /* ── RESPONSIVE ── */
     @media (max-width: 500px) {
       .header-title { font-size: 1.4rem; }
@@ -447,6 +526,16 @@
       <div class="mission-header-title">Моя глобальная цель</div>
       <div class="mission-header-sub">Что скажут обо мне люди на моём 70-летнем юбилее</div>
     </div>
+
+    <div class="section-label">Мои принципы</div>
+    <div class="principles-section">
+      <div class="principles-chips" id="principlesContainer"></div>
+    </div>
+
+    <div class="section-label">Мои роли</div>
+    <div class="roles-grid" id="rolesContainer"></div>
+
+    <div class="section-label">Каким меня запомнят</div>
     <div id="toastsContainer"></div>
   </div>
 
@@ -619,6 +708,31 @@
     const q = QUOTES[Math.floor((Date.now() / 86400000)) % QUOTES.length];
     document.getElementById('quoteText').textContent = `"${q.text}"`;
     document.getElementById('quoteAuthor').textContent = `— ${q.author}`;
+
+    // Principles
+    const principlesEl = document.getElementById('principlesContainer');
+    if (data.principles && data.principles.length > 0) {
+      principlesEl.innerHTML = data.principles.map(p =>
+        `<span class="principle-chip">${p.emoji} ${p.name}</span>`
+      ).join('');
+    }
+
+    // Roles
+    const rolesEl = document.getElementById('rolesContainer');
+    if (data.roles && data.roles.length > 0) {
+      rolesEl.innerHTML = data.roles.map(r => `
+        <div class="role-card">
+          <div class="role-header">
+            <span class="role-emoji">${r.emoji}</span>
+            <span class="role-name">${r.name}</span>
+          </div>
+          <div class="role-principles">
+            ${r.principles.map(p => `<span class="role-principle-tag">${p}</span>`).join('')}
+          </div>
+          <div class="role-statement">${r.statement}</div>
+        </div>`
+      ).join('');
+    }
 
     // Mission toasts
     const toastsEl = document.getElementById('toastsContainer');
