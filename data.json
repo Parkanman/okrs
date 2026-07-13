@@ -42,7 +42,7 @@
       "name": "Бег",
       "description": "Пробежать 50 км",
       "target": 50,
-      "current": 6,
+      "current": 10,
       "unit": "км",
       "category": "Здоровье"
     },
@@ -74,7 +74,7 @@
       "name": "Снижение веса",
       "description": "Похудеть с 103 до 95 кг",
       "target": 95,
-      "current": 102,
+      "current": 99,
       "start": 103,
       "unit": "кг",
       "direction": "down",
