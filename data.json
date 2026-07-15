@@ -106,7 +106,7 @@
       "name": "Кроссфит",
       "description": "10 тренировок",
       "target": 10,
-      "current": 1,
+      "current": 2,
       "unit": "тренировок",
       "category": "Здоровье"
     },
@@ -130,7 +130,7 @@
       "name": "Снижение веса",
       "description": "Похудеть с 103 до 95 кг",
       "target": 95,
-      "current": 99,
+      "current": 98,
       "start": 103,
       "unit": "кг",
       "direction": "down",
