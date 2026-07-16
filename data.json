@@ -106,7 +106,7 @@
       "name": "Кроссфит",
       "description": "10 тренировок",
       "target": 10,
-      "current": 2,
+      "current": 3,
       "unit": "тренировок",
       "category": "Здоровье"
     },
@@ -156,7 +156,7 @@
       "name": "Книги",
       "description": "Прочитать 10 книг",
       "target": 10,
-      "current": 2,
+      "current": 3,
       "unit": "книг",
       "category": "Развитие"
     },
