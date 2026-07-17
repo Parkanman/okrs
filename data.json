@@ -98,7 +98,7 @@
       "name": "Бег",
       "description": "Пробежать 50 км",
       "target": 50,
-      "current": 10,
+      "current": 13,
       "unit": "км",
       "category": "Здоровье"
     },
