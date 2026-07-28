@@ -156,7 +156,7 @@
       "name": "Книги",
       "description": "Прочитать 10 книг",
       "target": 10,
-      "current": 6,
+      "current": 7,
       "unit": "книг",
       "category": "Развитие"
     },
