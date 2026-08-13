@@ -130,7 +130,7 @@
       "name": "Снижение веса",
       "description": "Похудеть с 103 до 95 кг",
       "target": 95,
-      "current": 96,
+      "current": 94,
       "start": 103,
       "unit": "кг",
       "direction": "down",
@@ -148,7 +148,7 @@
       "name": "Музей",
       "description": "Посетить 3 музея",
       "target": 3,
-      "current": 0,
+      "current": 1,
       "unit": "посещения",
       "category": "Развитие"
     },
