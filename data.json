@@ -106,7 +106,7 @@
       "name": "Кроссфит",
       "description": "10 тренировок",
       "target": 10,
-      "current": 7,
+      "current": 8,
       "unit": "тренировок",
       "category": "Здоровье"
     },
@@ -156,7 +156,7 @@
       "name": "Книги",
       "description": "Прочитать 10 книг",
       "target": 10,
-      "current": 7,
+      "current": 8,
       "unit": "книг",
       "category": "Развитие"
     },
@@ -164,7 +164,7 @@
       "name": "Самодисциплина",
       "description": "Пройти курс по самодисциплине (12 глав)",
       "target": 12,
-      "current": 7,
+      "current": 8,
       "unit": "глав",
       "category": "Развитие"
     }
